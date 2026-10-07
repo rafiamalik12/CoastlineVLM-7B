@@ -101,7 +101,6 @@ U-Net provides stronger local boundary proximity. CoastlineVLM-7B achieves lower
   <img src="assets/west_coast_results.png" alt="West Coast qualitative comparison" width="90%">
 </p>
 
-
 Segmentation predictions can fragment or drift in difficult scenes, while CoastlineVLM-7B generally produces a more continuous coastline trace in these examples.
 
 ### <img src="assets/au.png" width="24" alt="Australian flag"> Cross-region zero-shot generalization to Australian data
