@@ -26,11 +26,30 @@ Coastlines are used as geometric curves in coastal monitoring, erosion assessmen
 
 Built on GeoChat-7B / LLaVA-1.5, it takes an aerial image and a task prompt and supports three tasks:
 
-| Task | Description | Model output |
-| :---: | --- | --- |
-| **I** | ☑️ **Coastline presence detection** | Whether a coastline is present in the image |
-| **II** | 🏷️ **Geomorphic proxy classification** | Vegetation line, Cliff line, Gravel berm, Built structure line, or Waterline |
-| **III** | 📍 **Coastline grounding** | An ordered sequence of coastline coordinate pairs |
+<div align="center">
+<table>
+  <tr>
+    <th>Task</th>
+    <th>Description</th>
+    <th>Model output</th>
+  </tr>
+  <tr>
+    <td align="center"><strong>I</strong></td>
+    <td>☑️ <strong>Coastline presence detection</strong></td>
+    <td>Whether a coastline is present in the image</td>
+  </tr>
+  <tr>
+    <td align="center"><strong>II</strong></td>
+    <td>🏷️ <strong>Geomorphic proxy classification</strong></td>
+    <td>Vegetation line, Cliff line, Gravel berm,<br>Built structure line, or Waterline</td>
+  </tr>
+  <tr>
+    <td align="center"><strong>III</strong></td>
+    <td>📍 <strong>Coastline grounding</strong></td>
+    <td>An ordered sequence of coastline coordinate pairs</td>
+  </tr>
+</table>
+</div>
 
 
 ### ⚙️ Model architecture and workflow
@@ -43,13 +62,6 @@ The diagram below shows data preparation, multi-task instruction tuning, frozen 
 ### 🎬 Animated overview
 
 https://github.com/user-attachments/assets/b8b643fb-9234-4eb5-b678-b4232bce9083
-
-## 🧩 Key contributions
-
-- **Direct coastline geometry:** Predicts ordered coastline polylines without an intermediate segmentation mask or raster-to-vector post-processing.
-- **Coastline-Instruct:** An instruction-tuning dataset combining LINZ aerial imagery with coastline annotations from the New Zealand Coastal Change Dataset (NZCCD).
-- **Geometric evaluation:** Assesses coastline localization using complementary tolerance-based and distance-based metrics.
-- **Independent evaluation:** Tests zero-shot generalization on Australian Victorian Coastal Monitoring Program (VCMP) imagery.
 
 ## 🗂️ Coastline-Instruct dataset
 
@@ -81,9 +93,18 @@ Coastline-Instruct contains **17,977 aerial image tiles** with instructions for 
 
 Training, validation, and test regions are geographically separated. The West Coast region is held out as the test set to evaluate performance on unseen coastal environments.
 
-| Input aerial image | Ground-truth coastline polyline |
-| --- | --- |
-| <img src="assets/coastline_instruct_raw.png" width="300"> | <img src="assets/coastline_instruct_label.png" width="300"> |
+<div align="center">
+<table>
+  <tr>
+    <th>Input aerial image</th>
+    <th>Ground-truth coastline polyline</th>
+  </tr>
+  <tr>
+    <td><img src="assets/coastline_instruct_raw.png" width="300" alt="Input aerial image"></td>
+    <td><img src="assets/coastline_instruct_label.png" width="300" alt="Ground-truth coastline polyline"></td>
+  </tr>
+</table>
+</div>
 
 **Example instructions:**
 
@@ -97,14 +118,70 @@ Training, validation, and test regions are geographically separated. The West Co
 
 Geometric coastline localization on the held-out West Coast test set. Higher is better for tolerance metrics (↑, %); lower is better for distance metrics (↓, m). Bold values indicate the best result in each column.
 
-| Model | ≤5 m ↑ | ≤10 m ↑ | ≤20 m ↑ | Chamfer ↓ | Hausdorff ↓ | Mod. Avg. HD ↓ | EMD ↓ |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| U-Net | **69.60** | **76.80** | **85.40** | **9.43** | 37.74 | **11.99** | 21.12 |
-| UNet++ | 65.60 | 72.00 | 79.50 | 13.78 | 68.25 | 19.67 | 28.59 |
-| DeepLabV3+ | 6.60 | 9.20 | 10.60 | 18.02 | 78.41 | 32.26 | 38.93 |
-| SegFormer | 18.40 | 20.60 | 23.60 | 17.99 | 74.48 | 30.97 | 39.61 |
-| CoastlineVLM-7B | 33.30 | 60.80 | 85.20 | 11.98 | **31.84** | 13.42 | **17.32** |
-
+<div align="center">
+<table>
+  <tr>
+    <th>Model</th>
+    <th>≤5 m ↑</th>
+    <th>≤10 m ↑</th>
+    <th>≤20 m ↑</th>
+    <th>Chamfer ↓</th>
+    <th>Hausdorff ↓</th>
+    <th>Mod. Avg. HD ↓</th>
+    <th>EMD ↓</th>
+  </tr>
+  <tr>
+    <td>U-Net</td>
+    <td align="right"><strong>69.60</strong></td>
+    <td align="right"><strong>76.80</strong></td>
+    <td align="right"><strong>85.40</strong></td>
+    <td align="right"><strong>9.43</strong></td>
+    <td align="right">37.74</td>
+    <td align="right"><strong>11.99</strong></td>
+    <td align="right">21.12</td>
+  </tr>
+  <tr>
+    <td>UNet++</td>
+    <td align="right">65.60</td>
+    <td align="right">72.00</td>
+    <td align="right">79.50</td>
+    <td align="right">13.78</td>
+    <td align="right">68.25</td>
+    <td align="right">19.67</td>
+    <td align="right">28.59</td>
+  </tr>
+  <tr>
+    <td>DeepLabV3+</td>
+    <td align="right">6.60</td>
+    <td align="right">9.20</td>
+    <td align="right">10.60</td>
+    <td align="right">18.02</td>
+    <td align="right">78.41</td>
+    <td align="right">32.26</td>
+    <td align="right">38.93</td>
+  </tr>
+  <tr>
+    <td>SegFormer</td>
+    <td align="right">18.40</td>
+    <td align="right">20.60</td>
+    <td align="right">23.60</td>
+    <td align="right">17.99</td>
+    <td align="right">74.48</td>
+    <td align="right">30.97</td>
+    <td align="right">39.61</td>
+  </tr>
+  <tr>
+    <td>CoastlineVLM-7B</td>
+    <td align="right">33.30</td>
+    <td align="right">60.80</td>
+    <td align="right">85.20</td>
+    <td align="right">11.98</td>
+    <td align="right"><strong>31.84</strong></td>
+    <td align="right">13.42</td>
+    <td align="right"><strong>17.32</strong></td>
+  </tr>
+</table>
+</div>
 U-Net provides stronger local boundary proximity. CoastlineVLM-7B achieves lower worst-case and global structural error, measured by Hausdorff distance and Earth Mover's Distance.
 
 <p align="center">
@@ -117,16 +194,53 @@ Segmentation predictions can fragment or drift in difficult scenes, while Coastl
 
 Evaluation on **600 VCMP UAV patches from four Victorian sites**, with **no additional fine-tuning**.
 
-| Model | ≤5 m ↑ | ≤10 m ↑ | ≤20 m ↑ | Chamfer ↓ | Hausdorff ↓ | Mod. Avg. HD ↓ | EMD ↓ |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| U-Net | 20.08 | 41.74 | 65.27 | 19.94 | 54.82 | 23.78 | 31.71 |
-| CoastlineVLM-7B | **26.44** | **49.21** | **74.28** | **15.63** | **44.12** | **18.20** | **24.54** |
+<div align="center">
+<table>
+  <tr>
+    <th>Model</th>
+    <th>≤5 m ↑</th>
+    <th>≤10 m ↑</th>
+    <th>≤20 m ↑</th>
+    <th>Chamfer ↓</th>
+    <th>Hausdorff ↓</th>
+    <th>Mod. Avg. HD ↓</th>
+    <th>EMD ↓</th>
+  </tr>
+  <tr>
+    <td>U-Net</td>
+    <td align="right">20.08</td>
+    <td align="right">41.74</td>
+    <td align="right">65.27</td>
+    <td align="right">19.94</td>
+    <td align="right">54.82</td>
+    <td align="right">23.78</td>
+    <td align="right">31.71</td>
+  </tr>
+  <tr>
+    <td>CoastlineVLM-7B</td>
+    <td align="right"><strong>26.44</strong></td>
+    <td align="right"><strong>49.21</strong></td>
+    <td align="right"><strong>74.28</strong></td>
+    <td align="right"><strong>15.63</strong></td>
+    <td align="right"><strong>44.12</strong></td>
+    <td align="right"><strong>18.20</strong></td>
+    <td align="right"><strong>24.54</strong></td>
+  </tr>
+</table>
+</div>
 
 Both models show reduced performance relative to the New Zealand test set. CoastlineVLM-7B performs better across the reported metrics on the independent Australian dataset, supporting promising cross-region transfer.
 
 <p align="center">
   <img src="assets/vcmp_results.png" alt="West Coast qualitative comparison" width="90%">
 </p>
+
+## 🧩 Key contributions
+
+- **Direct coastline geometry:** Predicts ordered coastline polylines without an intermediate segmentation mask or raster-to-vector post-processing.
+- **Coastline-Instruct:** An instruction-tuning dataset combining LINZ aerial imagery with coastline annotations from the New Zealand Coastal Change Dataset (NZCCD).
+- **Geometric evaluation:** Assesses coastline localization using complementary tolerance-based and distance-based metrics.
+- **Independent evaluation:** Tests zero-shot generalization on Australian Victorian Coastal Monitoring Program (VCMP) imagery.
 
 
 ## 📦 Code and dataset availability
