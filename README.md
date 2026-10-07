@@ -3,9 +3,8 @@
 #### A vision-language model that directly predicts an ordered coastline polyline, bypassing raster-to-vector post-processing.
 
 <p align="center">
-  <img src="https://i.imgur.com/waxVImv.png" alt="Decorative divider">
+  <img src="https://i.imgur.com/waxVImv.png" alt="">
 </p>
-
 
 ## Learning Coastlines as Geometric Curves
 
