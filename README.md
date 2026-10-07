@@ -14,6 +14,7 @@ A vision-language model that directly predicts an ordered coastline polyline, by
 
 ![CoastlineVLM-7B architecture and workflow](assets/overview.png)
 
+
 ## Updates
 
 - 🎉 Short paper accepted at REO-2, NeurIPS 2026.
