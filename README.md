@@ -12,13 +12,15 @@
 
 A vision-language model that directly predicts an ordered coastline polyline, bypassing raster-to-vector post-processing.
 
+![CoastlineVLM-7B architecture and workflow](assets/architecture.png)
+
 ## Updates
 
 - 🎉 Short paper accepted at REO-2, NeurIPS 2026.
 - 📝 Extended manuscript under review at Neurocomputing.
   
 
-## Overview
+## 🛰️ Overview
 
 Coastlines are used as geometric curves in coastal monitoring, erosion assessment, and spatial analysis. However, most deep learning pipelines predict segmentation masks and recover the coastline through post-processing. **CoastlineVLM-7B** directly predicts an ordered coastline polyline, bypassing raster-to-vector post-processing.
 
@@ -31,14 +33,14 @@ Built on GeoChat-7B / LLaVA-1.5, it takes an aerial image and a task prompt and 
 | 📍 **Coastline grounding** | An ordered sequence of coastline coordinate pairs |
 
 
-### Framework overview
+### ⚙️ Model architecture and workflow
 
-The diagram below summarizes the representation, model tasks, and key findings.
+The diagram below shows data preparation, multi-task instruction tuning, frozen and trainable model components, and inference.
 
-![CoastlineVLM-7B overview](assets/overview.png)
+![CoastlineVLM-7B architecture and workflow](assets/architecture.png)
 
 
-### Video overview
+### 🎬 Animated overview
 
 https://github.com/user-attachments/assets/b8b643fb-9234-4eb5-b678-b4232bce9083
 
