@@ -14,7 +14,7 @@ A vision-language model that directly predicts an ordered coastline polyline, by
 
 ## Updates
 
-- 🎉 Short paper accepted at REO2, NeurIPS 2026.
+- 🎉 Short paper accepted at REO-2, NeurIPS 2026.
 - 📝 Extended manuscript under review at Neurocomputing.
   
 
