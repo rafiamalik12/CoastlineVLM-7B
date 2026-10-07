@@ -1,5 +1,13 @@
 # CoastlineVLM-7B
-## Learning Coastlines as Geometric Curves with Vision-Language Models
+
+#### A vision-language model that directly predicts an ordered coastline polyline, bypassing raster-to-vector post-processing.
+
+<p align="center">
+  <img src="https://i.imgur.com/waxVImv.png" alt="Decorative divider">
+</p>
+
+
+## Learning Coastlines as Geometric Curves
 
 **[Rafia Malik](https://scholar.google.com/citations?user=14o8NMsAAAAJ)¹, [Bernhard Pfahringer](https://scholar.google.com/citations?user=PEv3OQUAAAAJ)¹, [Karin Bryan](https://scholar.google.com/citations?user=EbEzqL8AAAAJ)², [Mark Dickson](https://scholar.google.com/citations?user=Nbno3kwAAAAJ)², [Eibe Frank](https://scholar.google.com/citations?user=dUV_NvIAAAAJ)¹**  
 ¹ The University of Waikato, New Zealand  
@@ -10,7 +18,6 @@
 [![Code](https://img.shields.io/badge/Code-Coming%20soon-lightgrey.svg)](#code-and-dataset)
 [![Dataset](https://img.shields.io/badge/Dataset-Coming%20soon-lightgrey.svg)](#code-and-dataset)
 
-A vision-language model that directly predicts an ordered coastline polyline, bypassing raster-to-vector post-processing.
 
 ![CoastlineVLM-7B architecture and workflow](assets/overview.png)
 
