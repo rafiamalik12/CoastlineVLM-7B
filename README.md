@@ -12,7 +12,7 @@
 
 A vision-language model that directly predicts an ordered coastline polyline, bypassing raster-to-vector post-processing.
 
-![CoastlineVLM-7B architecture and workflow](assets/architecture.png)
+![CoastlineVLM-7B architecture and workflow](assets/overview.png)
 
 ## Updates
 
