@@ -27,6 +27,11 @@
 - 📝 Extended manuscript under review at Neurocomputing.
   
 
+## 🎬 From aerial imagery to coastline geometry
+
+https://github.com/user-attachments/assets/b8b643fb-9234-4eb5-b678-b4232bce9083
+
+
 ## 🛰️ Overview
 
 Coastlines are used as geometric curves in coastal monitoring, erosion assessment, and spatial analysis. However, most deep learning pipelines predict segmentation masks and recover the coastline through post-processing. **CoastlineVLM-7B** directly predicts an ordered coastline polyline, bypassing raster-to-vector post-processing.
@@ -66,9 +71,6 @@ The diagram below shows data preparation, multi-task instruction tuning, frozen 
 ![CoastlineVLM-7B architecture and workflow](assets/architecture.png)
 
 
-### 🎬 Animated overview
-
-https://github.com/user-attachments/assets/b8b643fb-9234-4eb5-b678-b4232bce9083
 
 ## 🗂️ Coastline-Instruct dataset
 
