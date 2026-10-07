@@ -113,7 +113,7 @@ Evaluation on **600 VCMP UAV patches from four Victorian sites**, with **no addi
 Both models show reduced performance relative to the New Zealand test set. CoastlineVLM-7B performs better across the reported metrics on the independent Australian dataset, supporting promising cross-region transfer.
 
 <p align="center">
-  <img src="assets/west_coast_results.png" alt="West Coast qualitative comparison" width="90%">
+  <img src="assets/vcmp_results.png" alt="West Coast qualitative comparison" width="90%">
 </p>
 
 
