@@ -26,11 +26,11 @@ Coastlines are used as geometric curves in coastal monitoring, erosion assessmen
 
 Built on GeoChat-7B / LLaVA-1.5, it takes an aerial image and a task prompt and supports three tasks:
 
-| Task | Model output |
-| --- | --- |
-| 🔍 **Coastline presence detection** | Whether a coastline is present in the image |
-| 🏷️ **Geomorphic proxy classification** | Vegetation line, Cliff line, Gravel berm, Built structure line, or Waterline |
-| 📍 **Coastline grounding** | An ordered sequence of coastline coordinate pairs |
+| Task | Description | Model output |
+| :---: | --- | --- |
+| **I** | ☑️ **Coastline presence detection** | Whether a coastline is present in the image |
+| **II** | 🏷️ **Geomorphic proxy classification** | Vegetation line, Cliff line, Gravel berm, Built structure line, or Waterline |
+| **III** | 📍 **Coastline grounding** | An ordered sequence of coastline coordinate pairs |
 
 
 ### ⚙️ Model architecture and workflow
@@ -61,12 +61,13 @@ Coastline-Instruct contains **17,977 aerial image tiles** with instructions for 
 | Coastline annotations | New Zealand Coastal Change Dataset (NZCCD) |
 | Image size | 504 × 504 pixels |
 | Geographic coverage | Nine New Zealand regions |
-| Region Names | Auckland, Bay of Plenty, Gisborne, Hawke’s Bay, Northland, Otago, Taranaki, Waikato, West Coast |
 | Images with a coastline | 8,988 |
 | Images without a coastline | 8,989 |
 | Training split | 16,221 images |
 | Validation split | 881 images, Hawke's Bay |
 | Test split | 875 images, West Coast |
+
+**Regions:** Auckland, Bay of Plenty, Gisborne, Hawke’s Bay, Northland, Otago, Taranaki, Waikato, and West Coast.
 
 Training, validation, and test regions are geographically separated. The West Coast region is held out as the test set to evaluate performance on unseen coastal environments.
 
