@@ -44,7 +44,7 @@ The diagram below shows data preparation, multi-task instruction tuning, frozen 
 
 https://github.com/user-attachments/assets/b8b643fb-9234-4eb5-b678-b4232bce9083
 
-## 💡 Key contributions
+## 🧩 Key contributions
 
 - **Direct coastline geometry:** Predicts ordered coastline polylines without an intermediate segmentation mask or raster-to-vector post-processing.
 - **Coastline-Instruct:** An instruction-tuning dataset combining LINZ aerial imagery with coastline annotations from the New Zealand Coastal Change Dataset (NZCCD).
@@ -55,19 +55,29 @@ https://github.com/user-attachments/assets/b8b643fb-9234-4eb5-b678-b4232bce9083
 
 Coastline-Instruct contains **17,977 aerial image tiles** with instructions for coastline presence, proxy classification, and polyline grounding.
 
-| Property | Details |
-| --- | --- |
-| Image source | Land Information New Zealand (LINZ) |
-| Coastline annotations | New Zealand Coastal Change Dataset (NZCCD) |
-| Image size | 504 × 504 pixels |
-| Geographic coverage | Nine New Zealand regions |
-| Images with a coastline | 8,988 |
-| Images without a coastline | 8,989 |
-| Training split | 16,221 images |
-| Validation split | 881 images, Hawke's Bay |
-| Test split | 875 images, West Coast |
-
-**Regions:** Auckland, Bay of Plenty, Gisborne, Hawke’s Bay, Northland, Otago, Taranaki, Waikato, and West Coast.
+<div align="center">
+<table>
+  <tr><th>Property</th><th>Details</th></tr>
+  <tr><td>Image source</td><td>Land Information New Zealand (LINZ)</td></tr>
+  <tr><td>Coastline annotations</td><td>New Zealand Coastal Change Dataset (NZCCD)</td></tr>
+  <tr><td>Image size</td><td>504 × 504 pixels</td></tr>
+  <tr><td>Geographic coverage</td><td>Nine New Zealand regions</td></tr>
+  <tr>
+  <td>Region Names</td>
+  <td>
+    Auckland, Bay of Plenty, Gisborne,<br>
+    Hawke’s Bay, Northland, Otago,<br>
+    Taranaki, Waikato, and West Coast
+  </td>
+</tr>
+  <tr><td>Images with a coastline</td><td>8,988</td></tr>
+  <tr><td>Images without a coastline</td><td>8,989</td></tr>
+  <tr><td>Training split</td><td>16,221 images</td></tr>
+  <tr><td>Validation split</td><td>881 images, Hawke’s Bay</td></tr>
+  <tr><td>Test split</td><td>875 images, West Coast</td></tr>
+</table>
+</div>
+<br>
 
 Training, validation, and test regions are geographically separated. The West Coast region is held out as the test set to evaluate performance on unseen coastal environments.
 
