@@ -1,0 +1,28 @@
+name: Sync TAIAO fork
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: sync-taiao
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.repository == 'rafiamalik12/CoastlineVLM-7B'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Sync department repository
+        env:
+          GH_TOKEN: ${{ secrets.TAIAO_SYNC_TOKEN }}
+        run: |
+          gh repo sync taiao/CoastlineVLM-7B \
+            --source rafiamalik12/CoastlineVLM-7B \
+            --branch main
