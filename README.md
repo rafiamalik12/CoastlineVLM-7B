@@ -13,7 +13,7 @@
 ² The University of Auckland, New Zealand
 
 [![arXiv](https://img.shields.io/badge/arXiv-2606.10468-b31b1b.svg)](https://arxiv.org/abs/2606.10468)
-[![Workshop](https://img.shields.io/badge/REO2-NeurIPS%202026-blue.svg)](#paper-and-publication-status)
+[![Workshop](https://img.shields.io/badge/REO2-NeurIPS%202026-blue.svg)](https://neurips.cc/virtual/2026/loc/paris/157125)
 [![Code](https://img.shields.io/badge/Code-Coming%20soon-lightgrey.svg)](#code-and-dataset)
 [![Dataset](https://img.shields.io/badge/Dataset-Coming%20soon-lightgrey.svg)](#code-and-dataset)
 
